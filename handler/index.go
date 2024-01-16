@@ -5,7 +5,7 @@ import (
 	"github.com/labstack/echo"
 )
 
-func HelloHanlder(c echo.Context) error {
+func IndexHandler(c echo.Context) error {
 	wordComp := templates.Index()
 	return render(c, wordComp)
 }

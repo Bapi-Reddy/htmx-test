@@ -1,15 +1,28 @@
 package templates
 
+import (
+	"github.com/Bapi-Reddy/htmx-test/templates/common"
+	"github.com/Bapi-Reddy/htmx-test/model"
+)
+
 templ Index() {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
 			<title>HTMX_TEST</title>
 			<link href="/css/output.css" rel="stylesheet"/>
+			<link
+				href="https://fonts.googleapis.com/icon?family=Material+Icons"
+				rel="stylesheet"
+			/>
 		</head>
 		<body>
-			<div class="h-screen w-screen bg-black flex flex-col  justify-center items-center">
-				@Hello("Bapi")
+			<div class="h-screen w-screen bg-black flex flex-col  justify-center items-center relative ">
+				@common.Typography("header", "TODO-LIST", "mb-12")
+				<div class="bg-white p-6 rounded-2x1 shadow-lg w-full">
+					@TodoCard(model.TodoCard{ID: "asd23", Text: "HelloWorld!", Checked: true })
+				</div>
+				@common.Button("Button is here")
 			</div>
 		</body>
 	</html>
