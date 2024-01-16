@@ -6,6 +6,6 @@ import (
 )
 
 func HelloHanlder(c echo.Context) error {
-	wordComp := templates.Hello("Bapi")
+	wordComp := templates.Index()
 	return render(c, wordComp)
 }

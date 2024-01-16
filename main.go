@@ -9,5 +9,6 @@ import (
 func main() {
 	app := echo.New()
 	app.GET("/", handler.HelloHanlder)
+	app.Static("/css", "./css")
 	app.Start(":3000")
 }
