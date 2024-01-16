@@ -7,7 +7,7 @@ import (
 
 	"github.com/Bapi-Reddy/htmx-test/controller"
 	"github.com/Bapi-Reddy/htmx-test/services"
-
+	_ "github.com/mattn/go-sqlite3"
 	"github.com/labstack/echo"
 )
 
@@ -16,7 +16,7 @@ func main() {
 
 	db, err := sql.Open("sqlite3", "./db/todo.db")
 	if err != nil {
-		log.Fatal(err)
+		logger.Fatal(err)
 	}
 	defer db.Close()
 
@@ -25,7 +25,7 @@ func main() {
 	`
 	_, err = db.Exec(sqlStmt)
 	if err != nil {
-		log.Printf("%q: %s\n", err, sqlStmt)
+		logger.Printf("%q: %s\n", err, sqlStmt)
 		return
 	}
 
