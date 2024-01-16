@@ -1,0 +1,13 @@
+package templates
+
+import (
+	"github.com/Bapi-Reddy/htmx-test/model"
+)
+
+templ TodoCards(todos []*model.TodoCard) {
+	<div class="bg-white p-6 rounded-2xl shadow-lg w-full flex flex-col gap-4" id="todos">
+		for _, todo := range todos {
+			@TodoCard(model.TodoCard{ID: todo.ID, Text: todo.Text, Checked: todo.Checked})
+		}
+	</div>
+}
