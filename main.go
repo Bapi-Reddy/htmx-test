@@ -11,6 +11,17 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
+func getPort() string {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = ":3000"
+	} else {
+		port = ":" + port
+	}
+
+	return port
+}
+
 func main() {
 	logger := log.New(os.Stdout, "MyApp ", log.LstdFlags)
 
@@ -39,5 +50,5 @@ func main() {
 		logger,
 		app,
 	)
-	app.Start(":3000")
+	app.Start(getPort())
 }
