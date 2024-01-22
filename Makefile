@@ -16,7 +16,6 @@ help: Makefile
 init:
 	go mod init ${module}
 	go install github.com/cosmtrek/air@latest
-	asdf reshim golang
 
 ## vet: vet code
 .PHONY: vet
@@ -41,7 +40,7 @@ docker-build: test
 ## docker-run: run project in a container
 .PHONY: docker-run
 docker-run:
-	docker run -it --rm -p 8080:8080 ${name}
+	docker run -it --rm -p 8080:3000 ${name}
 
 ## start: build and run local project
 .PHONY: start
