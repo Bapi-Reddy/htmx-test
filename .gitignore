@@ -2,5 +2,5 @@
 tmp/
 node_modules/*
 *.db
-*.app
+*app
 *.env
