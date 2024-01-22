@@ -1,4 +1,4 @@
-FROM golang:1.21.5-bookworm as build
+FROM golang:1.21.5 as build
 RUN go install github.com/a-h/templ/cmd/templ@latest
 WORKDIR /go/src/app
 COPY . .
